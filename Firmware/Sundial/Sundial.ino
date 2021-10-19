@@ -18,12 +18,15 @@ uint32_t hourToRGB(int h, int i) {
   float j = float(i) / float(N_Pixels);
   float k = float(h) / 2400.0;
   float l = k - j;
+
+  float m = k - 0.5;
+  float brightness = exp(-m * m * 24.0);
   
   float sunness = exp(-l * l * 24.0 * 24.0);
   
-  int r = int(255.0 * sunness);
-  int g = int(255.0 * sunness);
-  int b = int(255.0 * sunness);
+  int r = int(255 * brightness * sunness);
+  int g = int(255 * brightness * sunness);
+  int b = int(255 * brightness * sunness);
   return pixels.Color(r, g, b);
 }
 
