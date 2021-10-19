@@ -15,11 +15,6 @@ int color[] = {255, 255, 0};
 uint32_t hourToRGB(int h, int i) {
   // 0 <= h < 2400
 
-  Serial.print("h = ");
-  Serial.print(h);
-  Serial.print(", i = ");
-  Serial.println(i);
-
   float j = float(i) / float(N_Pixels);
   float k = float(h) / 2400.0;
   float l = k - j;
@@ -33,7 +28,6 @@ uint32_t hourToRGB(int h, int i) {
 }
 
 void setup() {
-  Serial.begin(9600);
   pixels.begin();
   pixels.show();
 }
