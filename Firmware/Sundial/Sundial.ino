@@ -2,7 +2,7 @@
 
 const int Signal_Pin = 6;
 const int N_Pixels = 24;
-const int Delay = 10;
+const int Delay = 5;
 
 Adafruit_NeoPixel pixels(N_Pixels, Signal_Pin, NEO_GRB + NEO_KHZ800);
 
